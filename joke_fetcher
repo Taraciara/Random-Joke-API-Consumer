@@ -1,0 +1,11 @@
+# joke_fetcher.py
+
+import requests
+
+def get_random_joke():
+    response = requests.get("https://official-joke-api.appspot.com/random_joke")
+    joke = response.json()
+    return f"{joke['setup']} - {joke['punchline']}"
+
+# Sample usage
+print(get_random_joke())
